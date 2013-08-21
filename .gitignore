@@ -1,0 +1,7 @@
+*.pyc
+*.ozf
+*.oz
+__pycache__
+*.swp
+*.swo
+

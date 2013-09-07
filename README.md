@@ -9,11 +9,9 @@ Usage:
 ./disasm.py [input.ozf]
 ```
 
-The output format is an Oz-like ASM dialect. This is not the standard ASM though (there isn't one for Mozart 2.0 yet).
+The output format is an Oz-like ASM dialect. This is not the standard ASM though.
 
-**Note: Because of mozart/mozart2#85, currently every procedure will be followed by a long string of unknown opcodes. This is normal.**
-
-There is no guarantee yet that the produced ASM will be the same as the real code. 
+There is no guarantee yet that the produced ASM will be the same as the real code.
 
 -----
 
@@ -24,10 +22,10 @@ The disassembler will produce the following instructions:
 * `A = B`. Unify the two registers A and B.
 * `alloc Y0 Y1 Y2 …`. Allocate the listed persistent registers.
 * `{P X0 X1 X2 …}`. Call a procedure.
-* `tail {P X0 X1 X2 …}`. Call a procedure as tail. 
+* `tail {P X0 X1 X2 …}`. Call a procedure as tail.
 * `goto 123`. Jump to instruction in the current code area at PC 123.
 * `goto case A of xyz(?X5 ?X6 ?X7) then 1234 [] … end`. Conditionally jump to an instruction, only if A matches the pattern `xyz(?X5 ?X6 ?X7)`. The part after `goto` has the same syntax as a normal Oz case/of construction.
 * `setup_eh`. Setup exception-handler.
-* `pop_eh`. Pop exception-handler. 
+* `pop_eh`. Pop exception-handler.
 * `return`. Return and quit the code area.
 
